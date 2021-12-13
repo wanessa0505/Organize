@@ -1,0 +1,81 @@
+body{	
+height: 100%;
+width:100%;   
+background-color: #B0C4DE;
+position: fixed;
+z-index: 0; 
+}
+#caixa{	
+position: fixed;
+display: inline-block;
+background-color: white;
+height: 80%;
+width: 60%;
+left: 20%;
+top: 11%;
+border-radius: 15px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+z-index: 1;
+}
+#atendimento{
+position: fixed;
+display: inline-block;
+width: 20%;
+height:80%;
+left:20%;
+border-radius: 15px;
+background: linear-gradient(to right,#6E52FC, #6d54fc, #6b5ff3, #6667ef, #656cfb, #6373fa, #5f7bf9, #5c83fa, #5b89f9, #5791f3, #5698f8, #549bf7);
+}
+#atendimento h2{
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+font-size: 30px;
+color: white;
+}
+#btnContatar{
+border-radius: 10px;
+color:white;
+position:relative;
+top:60%;
+width: 115px;
+height: 45px;
+left:15%;
+}
+#informacoes{
+display: inline-block;
+position: relative;
+top:10%;
+left:45%;
+}
+#informacoes h2{
+font-family: 'Poppins', sans-serif;
+font-weight: bold;
+font-size: 30px;
+color: #549bf7;
+}
+#informacoes a{
+text-decoration:none;
+color: #808080;
+font-family: 'Poppins', sans-serif;
+font-size: 14px;
+font-weight: bold;
+display: block;
+flex-wrap: wrap;
+}
+#btnWpp{
+	display: inline-block;
+	position:relative;
+	width: 35px;
+}
+#contato{
+display: inline-block;
+position: relative;
+left:10%;
+top:20%;
+}
+#btnInsta{
+display: inline-block;
+position:relative;
+width: 30px;
+top:12%;
+}
