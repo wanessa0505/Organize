@@ -18,38 +18,38 @@
     </div>
       <ul class="nav-links">
         <li>
-        <a href="{{ route('tarefas') }}">
+        <a href="{{ route('index') }}">
             <i class='bx bx-grid-alt'></i>
             <span class="links_name">Home</span>
           </a>
         </li>
         <li>
-        <a href="{{ route('usuario') }}">
+        <a href="{{ route('index') }}">
             <i class='bx bx-user'></i>
             <span class="links_name">Usuário</span>
           </a>
         </li>
         <li>
-        <a href="{{ route('anotacoes') }}">
+        <a href="{{ route('index') }}">
             <i class='bx bx-note'></i>
             <span class="links_name">Notas</span>
           </a>
         </li>
         <li>
-          <a href="{{ route('calendario') }}">
+          <a href="{{ route('index') }}">
             <i class='bx bx-calendar'></i>
             <span class="links_name">Calendário</span>
           </a>
         </li>
         <li>
-        <a href="{{ route('ajuda') }}">
+        <a href="{{ route('index') }}">
             <i class='bx bx-help-circle'></i>
             <span class="links_name">Ajuda</span>
           </a>
         </li>
        
         <li class="log_out">
-        <a href="{{ route('welcome') }}">
+        <a href="{{ route('index') }}">
             <i class='bx bx-log-out' id="log_out" ></i>
             <span class="links_name">Sair</span>
           </a>
@@ -69,7 +69,7 @@
       </div>
       <div class="profile-details">
         <img src="/img/profile.png" alt="">
-        <a href="{{ route('usuario') }}">
+        <a href="{{ route('index') }}">
           <span class="admin_name">Murilo Alencar</span>
         </a>
           <i class='bx bx-chevron-down'></i>
@@ -101,10 +101,13 @@
                               </div>
                               <div class="input-box">
                               <input type="tetx" placeholder="Status">
+                              <select name="" id="">
+                                <option value="{{ $status->id }}">{{ $status->status }}</option>
+                              </select>
                               </div>
 
                               <div class="button">
-                              <a href="{{ route('tarefas') }}">Criar</a>
+                              <a href="{{ route('index') }}">Criar</a>
                               </div>
                             </form>
                         </div>

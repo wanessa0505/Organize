@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TarefaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('templates.welcome');
+})->name('index');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('templates.tarefas');
+    });
+    Route::get('/dashboard/addtarefa', [TarefaController::class, 'formulario'])->name('add-tarefa');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 require __DIR__.'/auth.php';
+

@@ -41,24 +41,31 @@
                  <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
 
-                <form method="POST" class="form justify-content-center align-items-center" action="{{ route('login') }}">
+                 <form  method="POST" class="form" action="{{ route('register') }}"  >
                     @csrf
 
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <input type="text" placeholder="Name" name="name">
+                    </label>
+                    
                     <label class="label-input" for="">
                         <i class="far fa-envelope icon-modify"></i>
                         <input type="email" placeholder="Email" name="email">
                     </label>
-                
+                    
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Senha" name="password">
                     </label>
+                    
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Confirmação"  name="password_confirmation">
+                    </label>
+                    
+                    <button class="btn btn-second"> Inscrever-se
 
-                    @if (Route::has('password.request'))
-                    <a class="password" href="{{ route('password.request') }}">Esqueceu sua senha?</a>
-                    @endif
-            
-                    <button class="btn btn-second" type="submit">entrar</button>
                 </form>
             </div><!-- second column -->
         </div><!-- second-content -->

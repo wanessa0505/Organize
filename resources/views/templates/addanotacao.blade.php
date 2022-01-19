@@ -94,8 +94,7 @@
                                 <textarea class="textarea" id="textarea" placeholder="Descrição da anotação"></textarea> <br>
                               </div>
                               <div class="button">
-                              <a href="{{ route('anotacoes') }}">
-Criar</a>
+                              <a href="{{ route('anotacoes') }}">Criar</a>
                               </div>
                             </form>
                         </div>

@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.conteudo{
+    width: 50%;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
