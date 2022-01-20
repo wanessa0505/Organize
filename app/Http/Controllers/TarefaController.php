@@ -11,7 +11,6 @@ class TarefaController extends Controller
 {
     function formulario(){
         $status = Status::all();
-        
         return view('templates.addtarefa', ['status' => $status]);
     }
 }

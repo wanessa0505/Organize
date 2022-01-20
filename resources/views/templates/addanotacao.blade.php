@@ -18,7 +18,7 @@
     </div>
       <ul class="nav-links">
         <li>
-        <a href="{{ route('tarefas') }}">
+        <a href="{{ route('index') }}">
             <i class='bx bx-grid-alt'></i>
             <span class="links_name">Home</span>
           </a>

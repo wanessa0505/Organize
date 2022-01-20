@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-
-<html lang="en" dir="ltr">
-  <head>
+<html lang="en">
+ <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/addtarefa.css">
+    <link rel="stylesheet" href="/css/anotacoes.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Adicionar tarefas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações</title>
 
    </head>
 
@@ -100,9 +99,11 @@
                                 <textarea class="textarea" placeholder="Descrição da tarefa"></textarea> <br>
                               </div>
                               <div class="input-box">
-                              <input type="tetx" placeholder="Status">
+                              {{-- <input type="tetx" placeholder="Status"> --}}
                               <select name="" id="">
-                                <option value="{{ $status->id }}">{{ $status->status }}</option>
+                                @foreach ($status as $s)
+                                    <option value="{{ $s->id }}">{{ $s->status }}</option>
+                                @endforeach
                               </select>
                               </div>
 
