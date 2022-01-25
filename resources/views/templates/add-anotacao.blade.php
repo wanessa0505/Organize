@@ -4,10 +4,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/calendario.css">
+  <link rel="stylesheet" href="/css/add-anotacao.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendário</title>
+  <title>Adicionar anotação</title>
 
 </head>
 
@@ -56,82 +56,37 @@
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Calendário</span>
+        <span class="dashboard">Adicionar nota</span>
       </div>
     </nav>
 
-    <h1>Calendário Mensal de atividades</h1>
+    <div class="home-content">
+      <main>
+        <section>
+          <div class="activity-grid">
+            <div class="activity-card">
+              <h3>Bloco de notas</h3>
+              <p>Para criar uma nova anotação em seu planner, basta apenas preencher os campos abaixo e selecionar o botão "criar."</p>
+              <div class="right-side">
+                <form action="{{ route('add-anotacao-store') }}" method="POST">
+                  @csrf
+                  <div class="input-box">
+                    <input type="text" id="titulo" name="titulo" placeholder="Título da anotação">
+                  </div>
+                  <div class="input-box message-box">
+                    <textarea class="textarea" id="descricao" name="descricao" placeholder="Descrição da anotação"></textarea> <br>
+                  </div>
+                  <div class="button">
+                    <input type="submit" class="btn btn-primary" value="Criar anotação">
+                  </div>
+                </form>
+              </div>
 
-
-    <table cellspacing="0" cellpading="0">
-      <thead>
-        <tr>
-          <td colspan="7">Maio 2021</td>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>DOM</td>
-          <td>SEG</td>
-          <td>TER</td>
-          <td>QUA</td>
-          <td>QUI</td>
-          <td>SEX</td>
-          <td>SAB</td>
-        </tr>
-        <tr>
-          <td colspan="5"></td>
-          <td>1</td>
-          <td>2</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>11</td>
-          <td>12</td>
-          <td>13</td>
-          <td>14</td>
-          <td>15</td>
-          <td>16</td>
-        </tr>
-        <tr>
-          <td>17</td>
-          <td>18</td>
-          <td>19</td>
-          <td>20</td>
-          <td>21</td>
-          <td>22</td>
-          <td>23</td>
-        </tr>
-        <tr>
-          <td>24</td>
-          <td>25</td>
-          <td>26</td>
-          <td>27</td>
-          <td>28</td>
-          <td>29</td>
-          <td>30</td>
-        </tr>
-        <tr>
-          <td>31</td>
-          <td colspan="6"></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="7">21 dias úteis</td>
-        </tr>
-      </tfoot>
-
-    </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
 
 
     <script>
@@ -143,6 +98,11 @@
           sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
         } else
           sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+      }
+
+      function charCount() {
+        var element = document.getElementById('textarea').value.length;
+        document.getElementById('textarea_count').innerHTML = element + "/150 (Max Character 150).";
       }
     </script>
 

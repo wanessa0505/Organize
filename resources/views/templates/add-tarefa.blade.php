@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/ajuda.css">
+  <link rel="stylesheet" href="/css/add-tarefa.css">
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ajuda</title>
+  <title>Adicionar tarefa</title>
 
 </head>
 
@@ -52,41 +51,56 @@
     </ul>
   </div>
 
-
   <section class="home-section">
     <nav>
       <div class="sidebar-button">
         <i class='bx bx-menu sidebarBtn'></i>
-        <span class="dashboard">Ajuda</span>
-      </div>
+        <span class="dashboard">Adicionar Tarefa</span>
     </nav>
 
-    @if(10>5)
     <div class="home-content">
 
       <main>
         <section>
           <div class="activity-grid">
             <div class="activity-card">
-              <h3>Fale conosco</h3>
-              <p>Para ficar ainda mais informado sobre nós, utilize os canais de atendimento abaixo:</p>
-              <div class="canais">
-                <p>Endereço eletrônico: atendimentos@organizer.com.br</p>
-                <p>Instagram: @organizer.oficial</p>
-                <p>Whatsapp: (84) 996832949</p>
-                <p>Telegram: (84) 996832405</p>
-                <p>Twitter: https://twitter.com/organizer</p>
-                <p>Facebook: https://www.facebook.com/organizer</p>
-                <p></p>
+              <h3>Bloco de tarefas</h3>
+              <p>Para criar uma nova tarefa em seu planner, basta apenas preencher os campos abaixo e selecionar o botão "criar."</p>
+
+              <div class="right-side">
+                <form action="{{ route('add-tarefa-store') }}" method="POST">
+                  @csrf
+                  <div class="input-box">
+                    <input type="text" id="titulo" name="titulo" placeholder="Título da tarefa">
+                  </div>
+                  <div class="input-box">
+                    <input type="date" id="datainicial" name="datainicial" placeholder="Data da entrega. Ex.: 22 Nov, 2021">
+                  </div>
+                  <div class="input-box">
+                    <input type="date" id="dataconclusao" name="dataconclusao" placeholder="Data da entrega. Ex.: 22 Nov, 2021">
+                  </div>
+                  <div class="input-box message-box">
+                    <textarea class="textarea" id="descricao" name="descricao" placeholder="Descrição da tarefa"></textarea> <br>
+                  </div>
+                  <div class="input-box">
+                    <label for="title" Qual o status de realização da atividade?></label>
+                    <select name="status" id="status" class="form-control">
+                      <option>Em progresso</option>
+                      <option>Pendente</option>
+                      <option>Concluida</option>
+                    </select>
+                  </div>
+                  <div class="button">
+                    <input type="submit" class="btn btn-primary" value="Criar tarefa">
+                  </div>
+                </form>
               </div>
             </div>
-
-
+          </div>
         </section>
       </main>
 
     </div>
-    @endif
 
 
     <script>

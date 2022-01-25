@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="/css/welcome.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="container d-flex align-items-center justify-content-center">
         <div class="conteudo d-flex align-items-center justify-content-center">
@@ -34,11 +36,11 @@
                 </div><!-- social media -->
                 <p class="description description-second">ou use sua conta de e-mail:</p>
 
-                 <!-- Session Status -->
-                 <x-auth-session-status class="mb-4" :status="session('status')" />
+                <!-- Session Status -->
+                <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                 <!-- Validation Errors -->
-                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                <!-- Validation Errors -->
+                <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
 
                 <form method="POST" class="form justify-content-center align-items-center" action="{{ route('login') }}">
@@ -48,7 +50,7 @@
                         <i class="far fa-envelope icon-modify"></i>
                         <input type="email" placeholder="Email" name="email">
                     </label>
-                
+
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
                         <input type="password" placeholder="Password" name="password">
@@ -57,7 +59,7 @@
                     @if (Route::has('password.request'))
                     <a class="password" href="{{ route('password.request') }}">Esqueceu sua senha?</a>
                     @endif
-            
+
                     <button class="btn btn-second" type="submit">entrar</button>
                 </form>
             </div><!-- second column -->
@@ -66,6 +68,5 @@
     <script src="/js/app.js"></script>
 
 </body>
+
 </html>
-
-
