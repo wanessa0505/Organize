@@ -5,6 +5,11 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+body {
+    background: #f1f1f1;
+}
+
 .sidebar {
     position: fixed;
     height: 100%;
@@ -173,61 +178,6 @@ nav .profile-details i {
     position: relative;
     padding-top: 90px;
 }
-body {
-    background: #f1f1f1;
-}
-@media only screen and (max-width: 1200px) {
-    .sidebar {
-        width: 60px;
-        z-index: 150;
-    }
-
-    .sidebar .sidebar-header h3 span,
-    .sidebar li span:last-child {
-        display: none;
-    }
-
-    .sidebar .sidebar-header,
-    .sidebar li {
-        display: flex;
-        justify-content: center;
-    }
-
-    .main-content {
-        margin-left: 60px;
-    }
-
-    .main-content header {
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-
-    #sidebar-toggle:checked ~ .sidebar {
-        width: 240px;
-    }
-
-    #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
-    #sidebar-toggle:checked ~ .sidebar li span:last-child {
-        display: inline;
-    }
-
-    #sidebar-toggle:checked ~ .sidebar .sidebar-header {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    #sidebar-toggle:checked ~ .sidebar li {
-        display: block;
-    }
-
-    #sidebar-toggle:checked ~ .main-content {
-        margin-left: 60px;
-    }
-
-    #sidebar-toggle:checked ~ .main-content header {
-        left: 60px;
-    }
-}
 
 h1 {
     background-color: blue;
@@ -336,4 +286,57 @@ h2 {
 }
 .event.dia-atual::after {
     background: #f9f9f9;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 60px;
+        z-index: 150;
+    }
+
+    .sidebar .sidebar-header h3 span,
+    .sidebar li span:last-child {
+        display: none;
+    }
+
+    .sidebar .sidebar-header,
+    .sidebar li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
+
+    .main-content header {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+
+    #sidebar-toggle:checked ~ .sidebar {
+        width: 240px;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header h3 span,
+    #sidebar-toggle:checked ~ .sidebar li span:last-child {
+        display: inline;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar .sidebar-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #sidebar-toggle:checked ~ .sidebar li {
+        display: block;
+    }
+
+    #sidebar-toggle:checked ~ .main-content {
+        margin-left: 60px;
+    }
+
+    #sidebar-toggle:checked ~ .main-content header {
+        left: 60px;
+    }
 }
