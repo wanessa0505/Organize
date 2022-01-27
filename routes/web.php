@@ -16,15 +16,16 @@ use App\Http\Controllers\AnotacaoController;
 */
 
 Route::get('/', function () {
-    return view('templates.welcome');
+    return view('templates.index');
 })->name('index');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('templates.tarefas');
-    });
+    // Route::get('/dashboard', function () {
+    //     return view('templates.tarefas');
+    // });
+    
     // rotas envolvendo tarefas
-    Route::get('/tarefas', [TarefaController::class, 'index'])->name('tarefas');
+    Route::get('/dashboard', [TarefaController::class, 'index'])->name('tarefas');
     Route::get('/add-tarefa/create', [TarefaController::class, 'create'])->name('add-tarefa-create');
     Route::post('/add-tarefa/store', [TarefaController::class, 'store'])->name('add-tarefa-store');
     Route::delete('/tarefas/{id}/delete', [TarefaController::class, 'delete'])->name('tarefa-delete');

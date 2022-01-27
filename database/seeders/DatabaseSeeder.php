@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,14 +16,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('status')->insert([
-            'status' => 'Não iniciado'
+        $this->call(LaratrustSeeder::class);
+
+        DB::table('users')->insert([
+            'name' => 'admin',
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('admin'),
         ]);
-        DB::table('status')->insert([
-            'status' => 'Em processo'
-        ]);
-        DB::table('status')->insert([
-            'status' => 'Finalizado'
+
+        $user = User::all()->where('name', 'admin')->first();
+
+        DB::table('role_user')->insert([
+            'role_id' => 1,
+            'user_id' => strval($user->id),
+            'user_type' => 'App\Models\User',
         ]);
     }
 }

@@ -43,12 +43,24 @@
           <span class="links_name">Ajuda</span>
         </a>
       </li>
+      @role('admin')
+        <li>
+          <a href="/laratrust">
+            <i class='bx bx-menu'></i>
+            <span class="links_name">Administração</span>
+          </a>
+        </li>
+      @endrole
 
       <li class="log_out">
-        <a href="{{ route('index') }}">
-          <i class='bx bx-log-out' id="log_out"></i>
-          <span class="links_name">Sair</span>
-        </a>
+        <form action="{{ route('logout') }}" method="POST">
+          @csrf
+
+          <a href="{{ route('logout') }}" onclick="event.preventDefault();this.closest('form').submit();">
+            <i class='bx bx-log-out' id="log_out"></i>
+            <span class="links_name">Sair</span>
+          </a>
+        </form>
       </li>
     </ul>
   </div>
